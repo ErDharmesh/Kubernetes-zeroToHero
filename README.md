@@ -141,13 +141,32 @@ kubernetes     ClusterIP   10.96.0.1        <none>        443/TCP        23h   <
 28. it happened by ingress only.
 29. vi ingress.yaml
 
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-wildcard-host
+spec:
+  rules:
+  - host: html-web.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: html-web
+            port:
+              number: 80
 
 
+30. kubectl apply -f ingress.yaml
+31. kubectl get ingress -n default
+NAME                    CLASS    HOSTS      ADDRESS        PORTS   AGE
+ingress-wildcard-host   <none>   html-web   192.168.49.2   80      21h
 
+done
 
-
-
-
+# for complex app
 
 
 
