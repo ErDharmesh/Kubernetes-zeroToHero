@@ -130,3 +130,6 @@
 - kubectl create -f  /tmp/metallb.yaml
 - Now you able to see your External Ip
 - <img width="654" alt="image" src="https://github.com/ErDharmesh/Kubernetes-zeroToHero/assets/108712914/e439a650-d12e-4544-932e-59e8ba5ff5a0">
+
+
+- Metallb reference: https://youtu.be/2SmYjj-GFnE?si=BpVLhqv4y-44i6lH
